@@ -11,6 +11,6 @@ if st.button("generate QR"):
     st.image(img, caption="generated QR code")
 
     with open("qr.png","rb") as f:
-      st.download_button("download QR",f,file_name+"qr.png")
+      st.download_button("Download QR",f,file_name="qr.png")
 else:
   st.warning("Please enter some text")
