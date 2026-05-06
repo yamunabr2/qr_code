@@ -1,0 +1,15 @@
+import streamlit as st
+import qrcode
+from PIL import Image
+st.title("Qr code generator")
+data=st.text_input("enter url")
+if st.button("generate QR"):
+  if data:
+    qr= qrcode.make(data)
+    qr.save("qr.png")
+    st.image(img, caption="generated QR code")
+
+with open("qr.png","rb") as f:
+  st.download_button("download QR",f,file_name+"qr.png")
+  else
+  st.warning("Please enter some text")
